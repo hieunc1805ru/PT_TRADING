@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BLISSWHIP | Phuc Thanh Group</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size: cover;
+  padding-bottom: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ================= HEADER ================= */
+header {
+  height: 130px;
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size: cover;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease-in-out;
+}
+
+header.hide-header {
+  transform: translateY(-100%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.logo img {
+  height: 132px;
+  width: 230px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  font-size: 20px;
+  margin-bottom: 18px;
+}
+
+nav ul li a {
+  color: lightgreen;
+  font-weight: 600;
+}
+
+nav ul li a:hover {
+  color: #ff6f00;
+}
+
+/* ================= HERO ================= */
+#hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* SLIDER LIÊN TỤC */
+ .hero-slider {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+     url('https://cdn.bitrix24.com/b28854747/landing/944/944c910a3c260ec2ea73a25ea10ad4e9/bw1_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/bed/bedd98380ac9ab9d6ee0d2307daf4a17/bw2_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/ec7/ec7ebc7a3243558e0b1b4e52397c842c/bw3_1x.png'),
+    url('https://cdn.bitrix24.com/b28854747/landing/36b/36b2af9272cf6d559ad422c9f207749f/bw4_1x.png');
+    
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+  background-position:
+    0 0,
+    100vw 0,
+    200vw 0,
+    300vw 0;
+
+  animation: heroSlide 30s linear infinite;
+}
+
+@keyframes heroSlide {
+  from {
+    background-position:
+      0 0,
+      100vw 0,
+      200vw 0,
+      300vw 0;
+  }
+  to {
+    background-position:
+      -300vw 0,
+      -200vw 0,
+      -100vw 0,
+      0 0;
+  }
+}
+
+.hero-content {
+  color: lightgreen;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0,0,0,0.35);
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hero-content p {
+  color: lightgreen;
+  font-size: 18px;
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background: #ff6f00;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #e65f00;
+}
+
+/* ================= COMMON SECTION ================= */
+.section {
+  padding: 60px 0;
+  margin: 0 300px;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+/* ================= ABOUT US ================= */
+.product-cards {
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bfe/bfe210b08c403f042ab789e9ee5fd85f/sky3_1x.png");
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  color: green;
+}
+
+.card ul {
+  margin-top: 10px;
+  padding-left: 18px;
+}
+
+/* ================= QUALITY COMMITMENT ================= */
+.carousel-container {
+  overflow: hidden;
+}
+
+.carousel-slide {
+  display: flex;
+  width: 300%;
+  animation: slide 18s infinite linear;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
+  background-size: cover;
+  text-align: center;
+  padding: 18px 0;
+  transition: transform 0.35s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+
+footer p {
+  color: #ff6f00;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  .section {
+    margin: 0 20px;
+  }
+}
+
+/* ẨN SCROLLBAR */
+html, body {
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== CERTIFICATION AUTO CAROUSEL ===== */
+
+.cert-carousel {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.cert-slide {
+  display: flex;
+  width: max-content;
+  gap: 28px;
+  animation: certScroll 22s linear infinite;
+}
+
+.cert-carousel:hover .cert-slide {
+  animation-play-state: paused;
+}
+
+/* animation chạy liên tục */
+@keyframes certScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CARD STYLE */
+.slide-item {
+  background:lightskyblue;
+  width: 300px;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+/* Hover zoom + nổi */
+.slide-item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
+}
+
+/* IMAGE */
+.slide-item img {
+  width: cover;
+  height: 300px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  transition: transform 0.3s ease;
+}
+
+.slide-item:hover img {
+  transform: scale(1.05);
+}
+
+/* TITLE */
+.slide-item h4 {
+  color: green;
+  font-size: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+/* DESC */
+.cert-footer-text {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .slide-item {
+    width: 180px;
+  }
+}
+
+.whatsapp-contact a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #25D366;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.whatsapp-contact a:hover {
+  transform: scale(1.05);
+  color: #1ebe5d;
+}
+
+.whatsapp-contact i {
+  font-size: 22px;
+}
+
+/* ================= MOBILE RESPONSIVE IMPROVED ================= */
+@media (max-width: 768px) {
+
+  /* Header nhỏ gọn */
+  header {
+    height: 70px;
+  }
+
+  .header-content {
+    padding: 6px 12px;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+
+  nav ul {
+    font-size: 14px;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+
+  /* Hero */
+  #hero {
+    height: 55vh;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  /* Section bỏ margin lớn gây tràn */
+  .section {
+    margin: 0 14px;
+    padding: 30px 0;
+  }
+
+  /* Card full width */
+  .card {
+    padding: 16px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .card ul {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  /* Carousel ảnh thấp hơn */
+  .carousel-slide img {
+    height: 220px;
+  }
+
+  /* Certification nhỏ hơn */
+  .slide-item {
+    width: 160px;
+    padding: 12px;
+  }
+
+  .slide-item img {
+    height: 180px;
+  }
+
+  /* Footer KHÔNG fixed để không che nội dung */
+  footer {
+    position: relative;
+  }
+}
+
+/* FIX GAP FOOTER MOBILE */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-content">
+    <div class="logo">
+      <img src="https://cdn.bitrix24.com/b28854747/landing/8ce/8ce3f828f3a0b0daf0cd7031c2e8b22d/chatgpt_image_jan_13_2026_04_49_31_pm_1x.png">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="homepage">Back to Homepage</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section id="hero">
+  <div class="hero-slider"></div>
+  <div class="hero-content">
+    <h1>TERMS AND CONDITIONS</h1>
+  </div>
+</section>
+
+<section id="products" class="section">
+  <div class="container">
+    <h2 style="color: purple">TERMS AND CONDITIONS</h2>
+    <div class="product-cards">
+      <div class="card">
+        <h3 style="color: blue">By accessing or using this website, you agree to comply with and be bound by the following Terms and Conditions. Please read them carefully before using our services.</h3>
+        <ul> <b>
+          <li> General Information:
+This website is operated by PHUC THANH VIETNAM JSC under the brand name BLISSWHIP. These Terms apply to all visitors, customers, and users of this website.
+We reserve the right to update or modify these Terms at any time without prior notice. Continued use of the website constitutes acceptance of the updated Terms.</li>
+          <li>Product Use Disclaimer:
+
+All products sold by BLISSWHIP are intended strictly for culinary and food preparation purposes only.
+
+Our products are not intended for medical use, recreational use, inhalation purposes, or any illegal activities.
+
+Customers are responsible for using products according to provided instructions and safety guidelines. BLISSWHIP is not responsible for damages, injuries, or legal issues caused by improper or unauthorized use.</li>
+          <li>Order Acceptance:
+
+All orders placed through this website are subject to acceptance and availability.
+
+We reserve the right to refuse or cancel any order for reasons including but not limited to:
+<br> - Product availability
+<br> - Pricing errors
+<br> - Suspected fraudulent activity
+<br> - Regulatory or shipping restrictions
+
+If an order is canceled after payment has been processed, a full refund will be issued.</li>
+          <li>Pricing and Payment:
+
+All prices displayed on the website are subject to change without prior notice.
+
+Payments must be completed in full before orders are processed and shipped. We use secure third-party payment providers to handle transactions.</li>
+          <li>Intellectual Property:
+
+All content on this website, including logos, images, product descriptions, graphics, and text, is the property of PHUC THANH VIET NAM JSC and is protected by applicable intellectual property laws.
+
+Unauthorized use, reproduction, or distribution of any content from this website is prohibited.</li>
+          <li>Limitation of Liability:
+
+BLISSWHIP shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or website.
+
+Our total liability shall not exceed the amount paid by the customer for the purchased product.</li>
+          <li> Compliance with Laws:
+
+Customers are responsible for ensuring that the purchase and use of products comply with local laws and regulations.
+
+We reserve the right to restrict sales to certain regions or customers based on regulatory requirements.</li>
+          <li> Governing Law:
+
+These Terms and Conditions shall be governed by and interpreted in accordance with applicable commercial and consumer protection laws.
+</li>
+</b> </ul>
+      </div>
+    </div>    
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> BLISSWHIP</p>
+</footer>
+
+<script>
+let lastScrollTop = 0;
+const header = document.querySelector("header");
+const footer = document.querySelector("footer");
+
+window.addEventListener("scroll", function () {
+  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (scrollTop > lastScrollTop && scrollTop > 150) {
+    // Scroll xuống -> Ẩn header + footer
+    header.classList.add("hide-header");
+    footer.classList.add("hide-footer");
+  } else {
+    // Scroll lên -> Hiện header + footer
+    header.classList.remove("hide-header");
+    footer.classList.remove("hide-footer");
+  }
+
+  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
