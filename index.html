@@ -1,577 +1,927 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BLISSWHIP | Phuc Thanh Group</title>
-
-<style>
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  padding-bottom: 40px;
-}
-
-a {
-  text-decoration: none;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* ================= HEADER ================= */
-header {
-  height: 130px;
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  transition: transform 0.35s ease-in-out;
-}
-
-header.hide-header {
-  transform: translateY(-100%);
-}
-
-.header-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 0;
-}
-
-.logo img {
-  height: 132px;
-  width: 230px;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 24px;
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-
-nav ul li a {
-  color: lightgreen;
-  font-weight: 600;
-}
-
-nav ul li a:hover {
-  color: #ff6f00;
-}
-
-/* ================= HERO ================= */
-#hero {
-  position: relative;
-  height: 85vh;
-  overflow: hidden;
-  color: #fff;
-}
-
-/* SLIDER LIÊN TỤC */
- .hero-slider {
-  position: absolute;
-  inset: 0;
-
-  background-image:
-     url('https://cdn.bitrix24.com/b28854747/landing/944/944c910a3c260ec2ea73a25ea10ad4e9/bw1_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/bed/bedd98380ac9ab9d6ee0d2307daf4a17/bw2_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/ec7/ec7ebc7a3243558e0b1b4e52397c842c/bw3_1x.png'),
-    url('https://cdn.bitrix24.com/b28854747/landing/36b/36b2af9272cf6d559ad422c9f207749f/bw4_1x.png');
-    
-  background-repeat: no-repeat;
-  background-size: 100vw 100%;
-  background-position:
-    0 0,
-    100vw 0,
-    200vw 0,
-    300vw 0;
-
-  animation: heroSlide 30s linear infinite;
-}
-
-@keyframes heroSlide {
-  from {
-    background-position:
-      0 0,
-      100vw 0,
-      200vw 0,
-      300vw 0;
-  }
-  to {
-    background-position:
-      -300vw 0,
-      -200vw 0,
-      -100vw 0,
-      0 0;
-  }
-}
-
-.hero-content {
-  color: lightgreen;
-  position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: rgba(0,0,0,0.35);
-  padding: 0 20px;
-}
-
-.hero-content h1 {
-  font-size: 48px;
-  margin-bottom: 16px;
-}
-
-.hero-content p {
-  color: lightgreen;
-  font-size: 18px;
-  max-width: 600px;
-  margin-bottom: 24px;
-}
-
-.btn {
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: bold;
-}
-
-.btn-primary {
-  background: #ff6f00;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background: #e65f00;
-}
-
-/* ================= COMMON SECTION ================= */
-.section {
-  padding: 60px 0;
-  margin: 0 300px;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 32px;
-}
-
-/* ================= ABOUT US ================= */
-.product-cards {
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/bfe/bfe210b08c403f042ab789e9ee5fd85f/sky3_1x.png");
-  background-size: cover;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-}
-
-.card {
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-}
-
-.card h3 {
-  margin-bottom: 12px;
-  color: green;
-}
-
-.card ul {
-  margin-top: 10px;
-  padding-left: 18px;
-}
-
-/* ================= QUALITY COMMITMENT ================= */
-.carousel-container {
-  overflow: hidden;
-}
-
-.carousel-slide {
-  display: flex;
-  width: 300%;
-  animation: slide 18s infinite linear;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-}
-
-@keyframes slide {
-  0% { transform: translateX(0); }
-  33% { transform: translateX(-100%); }
-  66% { transform: translateX(-200%); }
-  100% { transform: translateX(0); }
-}
-
-/* ================= FOOTER ================= */
-footer {
-  background-image: url("https://cdn.bitrix24.com/b28854747/landing/3a7/3a70d932689c5015cb7c3aab39e934fb/sky4_1x.png");
-  background-size: cover;
-  text-align: center;
-  padding: 18px 0;
-  transition: transform 0.35s ease-in-out;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 999;
-}
-
-
-footer p {
-  color: #ff6f00;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 34px;
-  }
-
-  nav ul {
-    gap: 14px;
-  }
-
-  .section {
-    margin: 0 20px;
-  }
-}
-
-/* ẨN SCROLLBAR */
-html, body {
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;
-}
-
-/* ===== CERTIFICATION AUTO CAROUSEL ===== */
-
-.cert-carousel {
-  position: relative;
-  overflow: hidden;
-  padding: 20px 0;
-  width: 100%;
-}
-
-.cert-slide {
-  display: flex;
-  width: max-content;
-  gap: 28px;
-  animation: certScroll 22s linear infinite;
-}
-
-.cert-carousel:hover .cert-slide {
-  animation-play-state: paused;
-}
-
-/* animation chạy liên tục */
-@keyframes certScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* CARD STYLE */
-.slide-item {
-  background:lightskyblue;
-  width: 300px;
-  border-radius: 16px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
-  transition: all 0.35s ease;
-  cursor: pointer;
-}
-
-/* Hover zoom + nổi */
-.slide-item:hover {
-  transform: scale(1.08);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.18);
-}
-
-/* IMAGE */
-.slide-item img {
-  width: cover;
-  height: 300px;
-  object-fit: contain;
-  margin-bottom: 12px;
-  transition: transform 0.3s ease;
-}
-
-.slide-item:hover img {
-  transform: scale(1.05);
-}
-
-/* TITLE */
-.slide-item h4 {
-  color: green;
-  font-size: 16px;
-  margin-bottom: 6px;
-  font-weight: bold;
-}
-
-/* DESC */
-.cert-footer-text {
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .slide-item {
-    width: 180px;
-  }
-}
-
-.whatsapp-contact a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: #25D366;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 16px;
-  transition: 0.3s ease;
-}
-
-.whatsapp-contact a:hover {
-  transform: scale(1.05);
-  color: #1ebe5d;
-}
-
-.whatsapp-contact i {
-  font-size: 22px;
-}
-
-/* ================= MOBILE RESPONSIVE IMPROVED ================= */
-@media (max-width: 768px) {
-
-  /* Header nhỏ gọn */
-  header {
-    height: 70px;
-  }
-
-  .header-content {
-    padding: 6px 12px;
-  }
-
-  .logo img {
-    height: 60px;
-    width: auto;
-  }
-
-  nav ul {
-    font-size: 14px;
-    gap: 10px;
-    margin-bottom: 0;
-  }
-
-  /* Hero */
-  #hero {
-    height: 55vh;
-  }
-
-  .hero-content h1 {
-    font-size: 24px;
-  }
-
-  .hero-content p {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
-  /* Section bỏ margin lớn gây tràn */
-  .section {
-    margin: 0 14px;
-    padding: 30px 0;
-  }
-
-  /* Card full width */
-  .card {
-    padding: 16px;
-  }
-
-  .card h3 {
-    font-size: 14px;
-  }
-
-  .card ul {
-    font-size: 13px;
-    line-height: 1.5;
-  }
-
-  /* Carousel ảnh thấp hơn */
-  .carousel-slide img {
-    height: 220px;
-  }
-
-  /* Certification nhỏ hơn */
-  .slide-item {
-    width: 160px;
-    padding: 12px;
-  }
-
-  .slide-item img {
-    height: 180px;
-  }
-
-  /* Footer KHÔNG fixed để không che nội dung */
-  footer {
-    position: relative;
-  }
-}
-
-/* FIX GAP FOOTER MOBILE */
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 0;
-  }
-}
-
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phúc Thành Trading - Giải pháp Thương mại & Chuỗi cung ứng</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Thiết lập cơ bản */
+        body {
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #343a40; /* Màu chữ chính */
+            background-color: #ffffff;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+            color: purple;
+        }
+
+        a {
+            text-decoration: none;
+            color: purple;
+            font-size: 20px;
+        }
+
+        a:hover {
+            color: blue;
+        }
+
+        h1, h2, h3 {
+            color: purple;
+        }
+
+        .bg-light {
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+        }
+
+        /* CSS MỚI: Tạo khu vực background liền mạch */
+        /* Class này được dùng cho vùng cha lớn bao trọn các section liên quan */
+        .continuous-area {
+             background: url('https://img.freepik.com/free-photo/white-cloud-blue-sky-sea_74190-4488.jpg?semt=ais_hybrid&w=740&q=80');
+             background-repeat: no-repeat;
+             background-size: cover;
+        }
+
+        /* Đảm bảo màu chữ trong vùng background liền mạch được giữ nguyên theo thiết kế */
+        .continuous-area h2,
+        .continuous-area h3,
+        .continuous-area p,
+        .continuous-area ul,
+        .continuous-area li {
+            color: purple;
+        }
+        
+        /* Cần điều chỉnh màu chữ trong solution-item để giữ nguyên thiết kế (blue) */
+        .continuous-area .solution-item i {
+            color: #0056b3; /* Màu xanh đậm theo thiết kế cũ */
+        }
+        
+        /* Cần điều chỉnh màu chữ của các đối tượng trong logo-wrapper */
+        .continuous-area .slider-arrow {
+            color: #0056b3; /* Màu xanh đậm theo thiết kế cũ */
+        }
+
+
+        /* Header & Navigation */
+        header {
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: var(--white);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 120px; /* Chiều cao tối đa của logo */
+            width: 200px; /* Giữ tỷ lệ */
+            display: block;
+        }
+
+        .logo strong {
+            color: blue; /* Màu xanh lá phụ trợ */
+        }
+
+        nav a {
+            margin-left: 20px;
+            font-weight: 500;
+            padding: 10px 0;
+            transition: color 0.3s;
+        }
+
+        .contact-btn {
+            background-color: lightskyblue; /* Nút Liên hệ màu xanh lá nổi bật */
+            color: purple !important;
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-left: 30px;
+        }
+
+        .contact-btn:hover {
+            background-color: blue;
+        }
+        
+        /* CSS cho phần chọn ngôn ngữ mới */
+        .language-switcher {
+            display: flex;
+            gap: 10px;
+            margin-left: 20px;
+        }
+
+        .lang-button {
+            background-color: transparent;
+            border: none;
+            color: purple;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+            font-weight: bold;
+        }
+        
+        /* Loại bỏ style của thẻ 'a' cho nút ngôn ngữ */
+        .lang-button:hover {
+             color: blue;
+             background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .lang-button.active {
+            color: blue;
+            background-color: lightskyblue;
+        }
+
+
+        /* Hero Section */
+        .hero {
+            /* Thay đổi hình ảnh Hero phù hợp với lĩnh vực Trading */
+            background: url('https://images8.alphacoders.com/100/thumb-1920-1005447.jpg') no-repeat center center/cover;
+            color: lightskyblue;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            color: blue;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: purple;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: lightskyblue;
+        }
+
+        /* Solutions Section */
+        .solutions-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .solutions-section h2 {
+            margin-bottom: 40px;
+            font-size: 2em;
+        }
+
+        .solution-grid {
+            display: flex;
+            gap: 30px;
+            text-align: left;
+        }
+
+        .solution-item {
+            flex: 1;
+            /* Đổi background item thành màu trắng để nổi bật trên nền lightblue */
+            background-color: white; 
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-top: 5px solid #0056b3;
+        }
+
+        .solution-item i {
+            font-size: 2.5em;
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .solution-item h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .solution-item ul {
+            list-style-type: '✔️ '; /* Biểu tượng tùy chỉnh */
+            padding-left: 20px;
+            line-height: 2;
+        }
+
+        /* Client & Partner Section (Slider Mockup) */
+        .client-partner-section {
+            /* Giảm padding để tạo cảm giác liền mạch hơn giữa 3 sections */
+            padding: 40px 0; 
+            text-align: center;
+        }
+
+        .client-partner-section h2 {
+            margin-bottom: 10px;
+        }
+
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .logo-wrapper {
+            /* Vùng hiển thị (View Port) */
+            width: 90%;
+            overflow: hidden; /* Quan trọng: Ẩn các logo nằm ngoài tầm nhìn */
+            scroll-behavior: smooth; /* Tạo hiệu ứng cuộn mượt mà */
+        }
+
+        .logo-list {
+            /* Nội dung có thể cuộn (Scrollable Content) */
+            display: flex;
+            width: fit-content; /* Đảm bảo tổng chiều rộng bằng tổng chiều rộng của tất cả logo */
+            gap: 30px;
+        }
+
+        .logo-list img {
+            width: 180px; /* Đảm bảo logo có kích thước cố định */
+            height: 180px;
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+
+        /* .logo-list img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        } */
+
+        .slider-arrow {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #0056b3;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .slider-arrow:hover {
+            color: #004085;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Footer */
+        footer {
+            /* Vẫn giữ nguyên style này để đảm bảo liền mạch với các section trên */
+            background: url('https://wallpapers.com/images/hd/belarus-clear-sky-i3hg2vmwf0lcn125.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 40px 0 10px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #495057;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info h3 {
+            color: purple;
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+            color: purple;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: blue;
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 0.9em;
+            color: purple;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .nav-content {
+                flex-direction: column;
+            }
+
+            nav {
+                margin-top: 10px;
+            }
+
+            nav a {
+                margin: 0 8px;
+            }
+
+            .solution-grid {
+                flex-direction: column;
+            }
+
+            .hero {
+                padding: 50px 0;
+            }
+        }
+        
+        /* --- CSS CHO CHATBOT (Giữ nguyên) --- */
+        #chatbot-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1100;
+        }
+
+        #chatbot-toggle-btn {
+            background-color: purple;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            font-size: 1.5em;
+        }
+
+        #chatbot-toggle-btn:hover {
+            background-color: blue;
+        }
+
+        #chatbot-window {
+            width: 350px;
+            height: 450px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            display: none; /* Mặc định ẩn */
+            flex-direction: column;
+            margin-bottom: 10px; /* Khoảng cách với nút */
+            overflow: hidden;
+        }
+
+        #chatbot-header {
+            background-color: purple;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #chatbot-messages {
+            flex-grow: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f8f9fa;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 8px 12px;
+            border-radius: 15px;
+            line-height: 1.4;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background-color: lightskyblue;
+            color: #343a40;
+            border-bottom-left-radius: 0;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background-color: purple;
+            color: white;
+            border-bottom-right-radius: 0;
+        }
+        
+        .message-loading {
+            background-color: #e9ecef;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        #chatbot-input-container {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+        }
+
+        #chatbot-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        #chatbot-send-btn {
+            background-color: purple;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #chatbot-send-btn:hover {
+            background-color: blue;
+        }
+        /* --- KẾT THÚC CSS CHATBOT --- */
+
+    </style>
 </head>
+<body onload="setLanguage('vi')"> <header>
+        <div class="container nav-content">
+            <div class="logo">
+                <a href="https://phucthanhgroup.com/" target="_blank">
+                <img src="https://cdn.bitrix24.com/b28854747/landing/654/654ebc9ae06f9608f25efb83a9fbfb49/logo_removebg_preview_1x.png" alt="logo">
+                </a>
+            </div>
+            <nav>
+                <a href="https://phucthanhgroup.com/" data-lang-key="nav_main">Trang Chủ</a>
+                <a href="#gioithieu" data-lang-key="nav_about">Giới Thiệu</a>
+                <a href="#giaiphap" data-lang-key="nav_solutions">Giải Pháp</a>
+                <a href="#khachhang" data-lang-key="nav_customers">Khách Hàng</a>
+                <div class="language-switcher">
+                    <button class="lang-button active" onclick="setLanguage('vi')" data-lang="vi">VI</button>
+                    <button class="lang-button" onclick="setLanguage('en')" data-lang="en">EN</button>
+                    <button class="lang-button" onclick="setLanguage('zh')" data-lang="zh">中文</button>
+                    <button class="lang-button" onclick="setLanguage('ko')" data-lang="ko">한</button>
+                </div>
+                
+            </nav>
+        </div>
+    </header>
 
-<body>
+    <main>
+        <section id="gioithieu" class="hero">
+            <div class="container">
+                <a href="#giaiphap" class="cta-button" data-lang-key="hero_cta">Xem Giải Pháp Của Chúng Tôi</a>
+            </div>
+        </section>
 
-<header>
-  <div class="container header-content">
-    <div class="logo">
-      <img src="https://cdn.bitrix24.com/b28854747/landing/8ce/8ce3f828f3a0b0daf0cd7031c2e8b22d/chatgpt_image_jan_13_2026_04_49_31_pm_1x.png">
+         <section class="about-us bg-light">
+            <div class="container">
+                <h2 style="font-size: 35px" data-lang-key="about_title">Về Phúc Thành Trading</h2>
+               <p style="font-size: 20px" data-lang-key="about_description">Trading (Kinh doanh Tổng hợp) là một lĩnh vực chủ chốt của Phúc Thành Group. Chúng tôi chuyên cung cấp các giải pháp thương mại, dịch vụ, và chuỗi cung ứng tổng hợp hiệu quả, đáp ứng nhu cầu đa dạng của thị trường trong và ngoài nước.</p>
+            </div>
+        </section>
+        
+        <section class="continuous-area">
+            
+            <section id="giaiphap" class="solutions-section">
+                <div class="container">
+                    <h2 data-lang-key="solutions_title">Các Giải Pháp Thương Mại & Dịch Vụ</h2>
+                    <div class="solution-grid">
+
+                        <div class="solution-item">
+                            <i class="fas fa-box-open"></i> <h3 data-lang-key="solution_infra_title">Giải pháp Chuỗi cung ứng <br> Supply Chain & Logistics</h3>
+                            <p data-lang-key="solution_infra_desc">Cung cấp các giải pháp logistics và chuỗi cung ứng tối ưu, giúp khách hàng vận hành hiệu quả và tiết kiệm chi phí.</p>
+                            <ul>
+                                <li data-lang-key="solution_infra_list_1">Logistics và vận tải đa phương thức</li>
+                                <li data-lang-key="solution_infra_list_2">Quản lý và vận hành kho bãi thông minh</li>
+                                <li data-lang-key="solution_infra_list_3">Cung ứng vật tư và thiết bị chuyên dụng</li>
+                                <li data-lang-key="solution_infra_list_4">Tư vấn và tối ưu hóa chuỗi cung ứng</li>
+                            </ul>
+                        </div>
+
+                        <div class="solution-item">
+                            <i class="fas fa-shopping-bag"></i> <h3 data-lang-key="solution_dt_title">Thương mại Tổng hợp & XNK <br> General Trading & Import/Export</h3>
+                            <p data-lang-key="solution_dt_desc">Đảm bảo nguồn hàng hóa chất lượng, đa dạng, đáp ứng nhu cầu sản xuất và tiêu dùng trong nhiều ngành công nghiệp khác nhau.</p>
+                            <ul>
+                                <li data-lang-key="solution_dt_list_1">Thương mại hàng hóa tiêu dùng nhanh (FMCG)</li>
+                                <li data-lang-key="solution_dt_list_2">Thương mại vật liệu công nghiệp, hóa chất</li>
+                                <li data-lang-key="solution_dt_list_3">Thực hiện dịch vụ xuất nhập khẩu trọn gói</li>
+                                <li data-lang-key="solution_dt_list_4">Hỗ trợ phân phối sản phẩm quốc tế</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="khachhang" class="client-partner-section">
+            <div class="container">
+                    <h2 data-lang-key="customers_title">Khách Hàng Tiêu Biểu</h2>
+                    <p data-lang-key="customers_desc">Phục vụ đa dạng khách hàng từ khối cơ quan nhà nước, tập đoàn viễn thông, tài chính đến các doanh nghiệp sản xuất lớn.</p>
+                    <div class="slider-container">
+                        <button class="slider-arrow left-arrow" data-target="customer-slider" data-direction="-1"><i class="fas fa-chevron-left"></i></button>
+                        <div class="logo-wrapper" id="customer-slider">
+                            <div class="logo-list">
+                                <img src="https://upload.wikimedia.org/wikipedia/vi/thumb/6/6d/Botuphap.svg/250px-Botuphap.svg.png" alt="Khách hàng">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/Emblem_of_Vietnam.svg" alt="Khách hàng">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJzBA9kra2lq5L_o-8e70PELPNvcgZvWny8Q&s" alt="Khách hàng">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJkbU071duMDe0UMJ4R8S-9h2WuwysW46FfA&s" alt="Khách hàng">
+                                <img src="https://cdn.tgdd.vn/Files/2021/01/07/1318645/logo-1_600x600.jpg" alt="Khách hàng">
+                                <img src="https://i.pinimg.com/736x/87/45/28/8745287b40ac1b5eb1761fdbd9473f2a.jpg" alt="Khách hàng">
+                                <img src="https://inkythuatso.com/uploads/images/2021/12/logo-abbank-inkythuatso-07-15-01-34.jpg" alt="Khách hàng">
+                                <img src="https://icolor.vn/wp-content/uploads/2024/08/Logo-Agribank-2.png" alt="Khách hàng">
+                            </div>
+                        </div>
+                        <button class="slider-arrow right-arrow" data-target="customer-slider" data-direction="1"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+            
+            </section>
+        </main>
+
+    <footer id="lienhe">
+    <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3 data-lang-key="footer_contact_title">Liên Hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <span data-lang-key="footer_address">Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội</span></p>
+                    <p><i class="fas fa-phone-alt"></i> <span data-lang-key="footer_phone">Điện thoại: (024) 3976 3357</span></p>
+                    <p><i class="fas fa-envelope"></i> <span data-lang-key="footer_email">Email: info@phucthanhgroup.com</span></p>
+                </div>
+            </div>
+            <div class="copyright">
+               <p>&copy; <span id="year"></span> PHUC THANH VIETNAM JSC.</p>
+        </div>
+    </footer>
+    
+    <div id="chatbot-container">
+        <div id="chatbot-window">
+            <div id="chatbot-header" data-lang-key="chat_header">Phúc Thành Trading Chatbot</div> <div id="chatbot-messages">
+                <div class="message bot-message" data-lang-key="chat_welcome">Chào mừng bạn đến với Phúc Thành Trading! Bạn cần hỗ trợ gì về giải pháp Thương mại hay Chuỗi cung ứng?</div> </div>
+            <div id="chatbot-input-container">
+                <input type="text" id="chatbot-input" placeholder="Nhập câu hỏi của bạn...">
+                <button id="chatbot-send-btn"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+        <button id="chatbot-toggle-btn"><i class="fas fa-comments"></i></button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="homepage">Back to Homepage</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
-<section id="hero">
-  <div class="hero-slider"></div>
-  <div class="hero-content">
-    <h1>TERMS AND CONDITIONS</h1>
-  </div>
-</section>
+    <script>
+        // Cập nhật đối tượng Dịch Ngôn Ngữ cho Phúc Thành Trading
+        const translations = {
+            'vi': {
+                'nav_main': 'Trang Chủ',
+                'nav_about': 'Giới Thiệu',
+                'nav_solutions': 'Giải Pháp',
+                'nav_customers': 'Khách Hàng',
+                'nav_partners': 'Đối Tác',
+                'nav_contact': 'Liên Hệ',
+                'hero_cta': 'Xem Giải Pháp Của Chúng Tôi',
+                'about_title': 'Về Phúc Thành Trading', // Cập nhật
+                'about_description': 'Trading (Kinh doanh Tổng hợp) là một lĩnh vực chủ chốt của Phúc Thành Group. Chúng tôi chuyên cung cấp các giải pháp thương mại, dịch vụ, và chuỗi cung ứng tổng hợp hiệu quả, đáp ứng nhu cầu đa dạng của thị trường trong và ngoài nước.', // Cập nhật
+                'solutions_title': 'Các Giải Pháp Thương Mại & Dịch Vụ', // Cập nhật
+                'solution_infra_title': 'Giải pháp Chuỗi cung ứng \n Supply Chain & Logistics', // Cập nhật
+                'solution_infra_desc': 'Cung cấp các giải pháp logistics và chuỗi cung ứng tối ưu, giúp khách hàng vận hành hiệu quả và tiết kiệm chi phí.', // Cập nhật
+                'solution_infra_list_1': 'Logistics và vận tải đa phương thức', // Cập nhật
+                'solution_infra_list_2': 'Quản lý và vận hành kho bãi thông minh', // Cập nhật
+                'solution_infra_list_3': 'Cung ứng vật tư và thiết bị chuyên dụng', // Cập nhật
+                'solution_infra_list_4': 'Tư vấn và tối ưu hóa chuỗi cung ứng', // Cập nhật
+                'solution_dt_title': 'Thương mại Tổng hợp & XNK \n General Trading & Import/Export', // Cập nhật
+                'solution_dt_desc': 'Đảm bảo nguồn hàng hóa chất lượng, đa dạng, đáp ứng nhu cầu sản xuất và tiêu dùng trong nhiều ngành công nghiệp khác nhau.', // Cập nhật
+                'solution_dt_list_1': 'Thương mại hàng hóa tiêu dùng nhanh (FMCG)', // Cập nhật
+                'solution_dt_list_2': 'Thương mại vật liệu công nghiệp, hóa chất', // Cập nhật
+                'solution_dt_list_3': 'Thực hiện dịch vụ xuất nhập khẩu trọn gói', // Cập nhật
+                'solution_dt_list_4': 'Hỗ trợ phân phối sản phẩm quốc tế', // Cập nhật
+                'customers_title': 'Khách Hàng Tiêu Biểu',
+                'customers_desc': 'Phục vụ đa dạng khách hàng từ khối cơ quan nhà nước, tập đoàn viễn thông, tài chính đến các doanh nghiệp sản xuất lớn.', // Cập nhật
+                'partners_title': 'Đối Tác Chiến Lược',
+                'footer_contact_title': 'Liên Hệ',
+                'footer_address': 'Địa chỉ: Tầng 3 - 51 Lê Đại Hành, Hai Bà Trưng, Hà Nội',
+                'footer_phone': 'Điện thoại: (024) 3976 3357',
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phúc Thành Trading Chatbot', // Cập nhật
+                'chat_welcome': 'Chào mừng bạn đến với Phúc Thành Trading! Bạn cần hỗ trợ gì về giải pháp Thương mại hay Chuỗi cung ứng?', // Cập nhật
+                'chat_placeholder': 'Nhập câu hỏi của bạn...',
+            },
+            'en': {
+                'nav_main': 'Homepage',
+                'nav_about': 'About Us',
+                'nav_solutions': 'Solutions',
+                'nav_customers': 'Customers',
+                'nav_partners': 'Partners',
+                'nav_contact': 'Contact',
+                'hero_cta': 'View Our Solutions',
+                'about_title': 'About Phuc Thanh Trading', // Cập nhật
+                'about_description': 'Trading (General Business) is one of the key operating sectors of Phuc Thanh Group. We specialize in providing efficient trade, services, and general supply chain solutions, meeting diverse needs in domestic and international markets.', // Cập nhật
+                'solutions_title': 'Trade & Service Solutions', // Cập nhật
+                'solution_infra_title': 'Supply Chain & Logistics Solutions', // Cập nhật
+                'solution_infra_desc': 'Providing optimal logistics and supply chain solutions, helping customers operate efficiently and reduce costs.', // Cập nhật
+                'solution_infra_list_1': 'Multimodal logistics and transportation', // Cập nhật
+                'solution_infra_list_2': 'Smart warehouse management and operation', // Cập nhật
+                'solution_infra_list_3': 'Supply of specialized materials and equipment', // Cập nhật
+                'solution_infra_list_4': 'Consulting and optimizing the supply chain', // Cập nhật
+                'solution_dt_title': 'General Trading & Import/Export', // Cập nhật
+                'solution_dt_desc': 'Ensuring a quality and diverse supply of goods, meeting production and consumption needs across various industries.', // Cập nhật
+                'solution_dt_list_1': 'Fast-Moving Consumer Goods (FMCG) trading', // Cập nhật
+                'solution_dt_list_2': 'Industrial materials and chemical trading', // Cập nhật
+                'solution_dt_list_3': 'Executing trunkey import/export services', // Cập nhật
+                'solution_dt_list_4': 'International product distribution support', // Cập nhật
+                'customers_title': 'Key Customers',
+                'customers_desc': 'Serving diverse customers from government agencies, telecom corporations, finance groups to large manufacturing enterprises.', // Cập nhật
+                'partners_title': 'Strategic Partners',
+                'footer_contact_title': 'Contact Information',
+                'footer_address': 'Address: 3rd Floor - 51 Le Dai Hanh, Hai Ba Trung, Hanoi',
+                'footer_phone': 'Phone: (024) 3976 3357',
+                'footer_email': 'Email: info@phucthanhgroup.com',
+                'chat_header': 'Phuc Thanh Trading Chatbot', // Cập nhật
+                'chat_welcome': 'Welcome to Phuc Thanh Trading! How can I assist you with Trade or Supply Chain solutions?', // Cập nhật
+                'chat_placeholder': 'Enter your question...',
+            },
+            'zh': {
+                'nav_main': '主页',
+                'nav_about': '关于我们',
+                'nav_solutions': '解决方案',
+                'nav_customers': '客户',
+                'nav_partners': '合作伙伴',
+                'nav_contact': '联系方式',
+                'hero_cta': '查看我们的解决方案',
+                'about_title': '关于福成贸易', // Cập nhật
+                'about_description': '贸易（综合业务）是福成集团的关键运营领域之一。我们专注于提供高效的贸易、服务和综合供应链解决方案，满足国内外市场的多样化需求。', // Cập nhật
+                'solutions_title': '贸易与服务解决方案', // Cập nhật
+                'solution_infra_title': '供应链与物流解决方案', // Cập nhật
+                'solution_infra_desc': '提供优化物流和供应链的解决方案，帮助客户高效运营并降低成本。', // Cập nhật
+                'solution_infra_list_1': '多式联运物流与运输', // Cập nhật
+                'solution_infra_list_2': '智能仓库管理与运营', // Cập nhật
+                'solution_infra_list_3': '专用物资和设备供应', // Cập nhật
+                'solution_infra_list_4': '供应链咨询与优化', // Cập nhật
+                'solution_dt_title': '综合贸易与进出口', // Cập nhật
+                'solution_dt_desc': '确保优质和多样化的商品供应，满足各行各业的生产和消费需求。', // Cập nhật
+                'solution_dt_list_1': '快速消费品 (FMCG) 贸易', // Cập nhật
+                'solution_dt_list_2': '工业材料和化学品贸易', // Cập nhật
+                'solution_dt_list_3': '提供一站式进出口服务', // Cập nhật
+                'solution_dt_list_4': '国际产品分销支持', // Cập nhật
+                'customers_title': '主要客户',
+                'customers_desc': '服务于政府机构、电信集团、金融机构到大型制造企业等多元化客户。', // Cập nhật
+                'partners_title': '战略合作伙伴',
+                'footer_contact_title': '联系信息',
+                'footer_address': '地址: 河内市二征夫人郡黎大行路51号3楼',
+                'footer_phone': '电话: (024) 3976 3357',
+                'footer_email': '邮箱: info@phucthanhgroup.com',
+                'chat_header': '福成贸易聊天机器人', // Cập nhật
+                'chat_welcome': '欢迎使用福成贸易！您需要贸易或供应链解决方案方面的帮助吗？', // Cập nhật
+                'chat_placeholder': '输入您的问题...',
+            },
+            'ko': {
+                'nav_main': '홈페이지',
+                'nav_about': '회사 소개',
+                'nav_solutions': '솔루션',
+                'nav_customers': '고객',
+                'nav_partners': '파트너',
+                'nav_contact': '연락처',
+                'hero_cta': '솔루션 보기',
+                'about_title': '푹탄 트레이딩 소개', // Cập nhật
+                'about_description': '무역(종합 사업)은 푹탄 그룹의 주요 운영 부문 중 하나입니다. 우리는 국내외 시장의 다양한 요구를 충족시키는 효율적인 무역, 서비스 및 종합 공급망 솔루션을 전문적으로 제공합니다.', // Cập nhật
+                'solutions_title': '무역 및 서비스 솔루션', // Cập nhật
+                'solution_infra_title': '공급망 및 물류 솔루션', // Cập nhật
+                'solution_infra_desc': '고객이 효율적으로 운영하고 비용을 절감할 수 있도록 최적의 물류 및 공급망 솔루션을 제공합니다.', // Cập nhật
+                'solution_infra_list_1': '복합 운송 물류 및 운송', // Cập nhật
+                'solution_infra_list_2': '스마트 창고 관리 및 운영', // Cập nhật
+                'solution_infra_list_3': '전문 자재 및 장비 공급', // Cập nhật
+                'solution_infra_list_4': '공급망 컨설팅 및 최적화', // Cập nhật
+                'solution_dt_title': '종합 무역 및 수출입', // Cập nhật
+                'solution_dt_desc': '다양한 산업 분야의 생산 및 소비 요구를 충족하는 고품질의 다양한 상품 공급을 보장합니다.', // Cập nhật
+                'solution_dt_list_1': '소비재 (FMCG) 무역', // Cập nhật
+                'solution_dt_list_2': '산업 자재 및 화학 제품 무역', // Cập nhật
+                'solution_dt_list_3': '종합 수출입 서비스 실행', // Cập nhật
+                'solution_dt_list_4': '국제 제품 유통 지원', // Cập nhật
+                'customers_title': '주요 고객',
+                'customers_desc': '정부 기관, 통신 기업, 금융 그룹부터 대형 제조 기업에 이르기까지 다양한 고객에게 서비스를 제공합니다.', // Cập nhật
+                'partners_title': '전략적 파트너',
+                'footer_contact_title': '연락 정보',
+                'footer_address': '주소: 하노이 하이바쯩 레다이행 51번지 3층',
+                'footer_phone': '전화: (024) 3976 3357',
+                'footer_email': '이메일: info@phucthanhgroup.com',
+                'chat_header': '푹탄 트레이딩 챗봇', // Cập nhật
+                'chat_welcome': '푹탄 트레이딩에 오신 것을 환영합니다! 무역 또는 공급망 솔루션에 대해 도움이 필요하신가요?', // Cập nhật
+                'chat_placeholder': '질문을 입력하세요...',
+            }
+        };
+        
+        // Cập nhật Dữ liệu nội dung gốc của trang web bằng Tiếng Việt
+        const pageContent = {
+            'about': translations.vi.about_description,
+            'solutions': `Chuỗi cung ứng: ${translations.vi.solution_infra_desc}. Bao gồm: ${translations.vi.solution_infra_list_1}, ${translations.vi.solution_infra_list_2}, ${translations.vi.solution_infra_list_3}, ${translations.vi.solution_infra_list_4}.
+                          Thương mại & XNK: ${translations.vi.solution_dt_desc}. Bao gồm: ${translations.vi.solution_dt_list_1}, ${translations.vi.solution_dt_list_2}, ${translations.vi.solution_dt_list_3}, ${translations.vi.solution_dt_list_4}.`,
+            'contact': `Địa chỉ: ${translations.vi.footer_address}. Điện thoại: ${translations.vi.footer_phone}. Email: ${translations.vi.footer_email}.`,
+            'default': 'Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến Phúc Thành Trading (Giới thiệu, Giải pháp, Liên hệ). Vui lòng đặt câu hỏi khác.', // Cập nhật
+        };
+        
+        let currentLang = 'vi'; // Biến theo dõi ngôn ngữ hiện tại
+        
+        // Hàm mô phỏng dịch thuật (giữ nguyên logic, cập nhật câu chào/default)
+        function translateText(text, targetLang) {
+            if (targetLang === 'vi') return text;
+            
+            // Dịch câu chào
+            if (text.includes('Chào mừng bạn đến với Phúc Thành Trading')) {
+                return translations[targetLang].chat_welcome;
+            } 
+            
+            // Dịch câu từ chối mặc định
+            if (text.includes('Xin lỗi, tôi chỉ có thể trả lời các câu hỏi liên quan đến Phúc Thành Trading')) {
+                const defaultResponses = {
+                    'en': "I apologize, I can only answer questions related to Phuc Thanh Trading (About us, Solutions, Contact). Please ask another question.",
+                    'zh': "抱歉，我只能回答与福成贸易（关于我们、解决方案、联系方式）相关的问题。请问其他问题。",
+                    'ko': "죄송합니다. 푹탄 트레이딩 (회사 소개, 솔루션, 연락처)와 관련된 질문에만 답변할 수 있습니다. 다른 질문을 해주세요。",
+                };
+                return defaultResponses[targetLang] || text;
+            }
+            
+            // Trong môi trường thực, chúng ta cần một API dịch thuật chính thức. 
+            // Ở đây, ta chỉ trả về câu tiếng Việt và thông báo cần API dịch.
+            return `[Cần API dịch thuật] ${text}`;
+        }
 
-<section id="products" class="section">
-  <div class="container">
-    <h2 style="color: purple">TERMS AND CONDITIONS</h2>
-    <div class="product-cards">
-      <div class="card">
-        <h3 style="color: blue">By accessing or using this website, you agree to comply with and be bound by the following Terms and Conditions. Please read them carefully before using our services.</h3>
-        <ul> <b>
-          <li> General Information:
-This website is operated by PHUC THANH VIETNAM JSC under the brand name BLISSWHIP. These Terms apply to all visitors, customers, and users of this website.
-We reserve the right to update or modify these Terms at any time without prior notice. Continued use of the website constitutes acceptance of the updated Terms.</li>
-          <li>Product Use Disclaimer:
 
-All products sold by BLISSWHIP are intended strictly for culinary and food preparation purposes only.
+        // Hàm logic Chatbot (Cập nhật từ khóa)
+        function getBotResponse(userMessage) {
+            const msg = userMessage.toLowerCase();
+            
+            if (msg.includes('giới thiệu') || msg.includes('về công ty') || msg.includes('phúc thành group')) {
+                return pageContent.about;
+            } else if (msg.includes('giải pháp') || msg.includes('thương mại') || msg.includes('chuỗi cung ứng') || msg.includes('logistics') || msg.includes('xnk')) {
+                return pageContent.solutions;
+            } else if (msg.includes('liên hệ') || msg.includes('địa chỉ') || msg.includes('điện thoại') || msg.includes('email')) {
+                return pageContent.contact;
+            } else if (msg.includes('chào') || msg.includes('hello') || msg.includes('xin chào')) {
+                return translations.vi.chat_welcome; // Trả về câu chào gốc (sẽ được dịch sau)
+            } else {
+                return pageContent.default;
+            }
+        }
+        
+        // Hàm hiển thị tin nhắn (giữ nguyên)
+        function appendMessage(sender, message) {
+            const messagesContainer = document.getElementById('chatbot-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.classList.add('message');
+            messageDiv.classList.add(sender === 'user' ? 'user-message' : 'bot-message');
+            messageDiv.textContent = message;
+            messagesContainer.appendChild(messageDiv);
+            
+            // Tự động cuộn xuống cuối
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            return messageDiv;
+        }
 
-Our products are not intended for medical use, recreational use, inhalation purposes, or any illegal activities.
+        // Xử lý gửi tin nhắn (giữ nguyên)
+        function sendMessage() {
+            const inputElement = document.getElementById('chatbot-input');
+            const userMessage = inputElement.value.trim();
 
-Customers are responsible for using products according to provided instructions and safety guidelines. BLISSWHIP is not responsible for damages, injuries, or legal issues caused by improper or unauthorized use.</li>
-          <li>Order Acceptance:
+            if (userMessage === '') return;
 
-All orders placed through this website are subject to acceptance and availability.
+            // 1. Hiển thị tin nhắn người dùng
+            appendMessage('user', userMessage);
+            inputElement.value = '';
 
-We reserve the right to refuse or cancel any order for reasons including but not limited to:
-<br> - Product availability
-<br> - Pricing errors
-<br> - Suspected fraudulent activity
-<br> - Regulatory or shipping restrictions
+            // 2. Hiện trạng thái đang nhập
+            const loadingMessage = appendMessage('bot', '...');
+            loadingMessage.classList.add('message-loading');
 
-If an order is canceled after payment has been processed, a full refund will be issued.</li>
-          <li>Pricing and Payment:
-
-All prices displayed on the website are subject to change without prior notice.
-
-Payments must be completed in full before orders are processed and shipped. We use secure third-party payment providers to handle transactions.</li>
-          <li>Intellectual Property:
-
-All content on this website, including logos, images, product descriptions, graphics, and text, is the property of PHUC THANH VIET NAM JSC and is protected by applicable intellectual property laws.
-
-Unauthorized use, reproduction, or distribution of any content from this website is prohibited.</li>
-          <li>Limitation of Liability:
-
-BLISSWHIP shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or website.
-
-Our total liability shall not exceed the amount paid by the customer for the purchased product.</li>
-          <li> Compliance with Laws:
-
-Customers are responsible for ensuring that the purchase and use of products comply with local laws and regulations.
-
-We reserve the right to restrict sales to certain regions or customers based on regulatory requirements.</li>
-          <li> Governing Law:
-
-These Terms and Conditions shall be governed by and interpreted in accordance with applicable commercial and consumer protection laws.
-</li>
-</b> </ul>
-      </div>
-    </div>    
-  </div>
-</section>
-
-<footer>
-  <p>© <span id="year"></span> BLISSWHIP</p>
-</footer>
-
-<script>
-let lastScrollTop = 0;
-const header = document.querySelector("header");
-const footer = document.querySelector("footer");
-
-window.addEventListener("scroll", function () {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop && scrollTop > 150) {
-    // Scroll xuống -> Ẩn header + footer
-    header.classList.add("hide-header");
-    footer.classList.add("hide-footer");
-  } else {
-    // Scroll lên -> Hiện header + footer
-    header.classList.remove("hide-header");
-    footer.classList.remove("hide-footer");
-  }
-
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+            // 3. Mô phỏng độ trễ và xử lý câu trả lời
+            setTimeout(() => {
+                loadingMessage.remove(); // Xóa tin nhắn đang nhập
+                
+                // Lấy câu trả lời gốc bằng Tiếng Việt
+                const rawResponse = getBotResponse(userMessage);
+                
+                // Dịch câu trả lời sang ngôn ngữ hiện tại của trang web
+                const translatedResponse = translateText(rawResponse, currentLang); 
+                
+                // 4. Hiển thị câu trả lời của Bot
+                appendMessage('bot', translatedResponse);
+                
+                // Cập nhật lại placeholder sau khi trả lời
+                document.getElementById('chatbot-input').placeholder = translations[currentLang].chat_placeholder;
+                document.getElementById('chatbot-header').textContent = translations[currentLang].chat_header;
 
 
+            }, 800); 
+        }
+
+        // --- Sự kiện Chatbot (giữ nguyên) ---
+        document.getElementById('chatbot-toggle-btn').addEventListener('click', () => {
+            const chatbotWindow = document.getElementById('chatbot-window');
+            chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+            
+            // Đảm bảo placeholder được dịch khi mở cửa sổ
+            if (chatbotWindow.style.display === 'flex') {
+                document.getElementById('chatbot-input').placeholder = translations[currentLang].chat_placeholder;
+                document.getElementById('chatbot-header').textContent = translations[currentLang].chat_header;
+            }
+        });
+
+        document.getElementById('chatbot-send-btn').addEventListener('click', sendMessage);
+        document.getElementById('chatbot-input').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // --- Chức năng Slider (giữ nguyên) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const arrows = document.querySelectorAll('.slider-arrow');
+
+            arrows.forEach(arrow => {
+                arrow.addEventListener('click', () => {
+                    const targetId = arrow.getAttribute('data-target');
+                    const sliderWrapper = document.getElementById(targetId);
+                    const direction = parseInt(arrow.getAttribute('data-direction'));
+                    const scrollAmount = sliderWrapper.clientWidth;
+                    sliderWrapper.scrollLeft += scrollAmount * direction;
+                });
+            });
+            
+        });
+        
+        // --- Chức năng Đa Ngôn Ngữ (giữ nguyên) ---
+        function setLanguage(lang) {
+            currentLang = lang; // Cập nhật ngôn ngữ hiện tại
+            const elements = document.querySelectorAll('[data-lang-key]');
+            const currentTranslation = translations[lang];
+            
+            // Cập nhật nội dung trang web
+            elements.forEach(element => {
+                const key = element.getAttribute('data-lang-key');
+                if (currentTranslation[key]) {
+                    if (element.tagName === 'A' && element.classList.contains('cta-button')) {
+                         element.textContent = currentTranslation[key];
+                    } else if (element.tagName === 'A' && element.classList.contains('contact-btn')) {
+                         element.textContent = currentTranslation[key];
+                    }
+                     else if (element.tagName === 'A') { 
+                         element.textContent = currentTranslation[key];
+                    }
+                    else if (element.tagName === 'SPAN') {
+                         element.textContent = currentTranslation[key];
+                    }
+                    else {
+                        // Xử lý xuống dòng cho tiêu đề giải pháp
+                        if (key === 'solution_infra_title' || key === 'solution_dt_title') {
+                            element.innerHTML = currentTranslation[key].replace(/\n/g, '<br>');
+                        } else {
+                            element.textContent = currentTranslation[key];
+                        }
+                    }
+                }
+            });
+            
+            // Cập nhật placeholder và header của Chatbot
+            document.getElementById('chatbot-input').placeholder = translations[lang].chat_placeholder;
+            document.getElementById('chatbot-header').textContent = translations[lang].chat_header;
+            
+            // Cập nhật câu chào mừng của Chatbot
+            const welcomeMessage = document.querySelector('#chatbot-messages .bot-message');
+            if(welcomeMessage && welcomeMessage.getAttribute('data-lang-key') === 'chat_welcome'){
+                 welcomeMessage.textContent = translations[lang].chat_welcome;
+            }
+
+            // Cập nhật trạng thái nút ngôn ngữ
+            document.querySelectorAll('.lang-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.lang-button[data-lang="${lang}"]`).classList.add('active');
+            
+            document.documentElement.lang = lang; 
+        }
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
